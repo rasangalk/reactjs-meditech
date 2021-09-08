@@ -1,0 +1,549 @@
+.App {
+	width: 100vw;
+	height: 100vh;
+}
+
+/* width */
+::-webkit-scrollbar {
+	width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+	background: none;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+	background: #77a6e4;
+	border-radius: 76px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+	background: #555;
+}
+
+* {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+}
+
+body {
+	padding: 0;
+	margin: 0;
+	background-color: #4d97fb;
+	position: relative;
+}
+
+.Sidebar {
+	width: 240px;
+	margin-top: 236px;
+}
+
+.SidebarList {
+	height: auto;
+	padding: 0;
+	width: 100%;
+	font-family: "Poppins", sans-serif;
+	list-style-type: none;
+}
+
+.SidebarList .row {
+	width: 100%;
+	height: 40px;
+	list-style-type: none;
+	margin-top: 10px;
+	color: #272727;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding-left: 0px;
+	text-decoration: none;
+}
+
+.SidebarList .row:hover {
+	cursor: pointer;
+	background-color: #f6faff;
+	border-radius: 0 30px 30px 0;
+}
+
+.active-nav {
+	background-color: #f6faff;
+	border-radius: 0 30px 30px 0;
+}
+
+.SidebarList #active {
+	background-color: #f6faff;
+	border-radius: 0 30px 30px 0;
+}
+
+.MainContainer {
+	position: absolute;
+	margin: auto;
+	width: 1120px;
+	height: 560px;
+	right: 80px;
+	left: 80px;
+	top: 80px;
+	bottom: 80px;
+	background: rgba(255, 255, 255, 0.51);
+	border-radius: 40px;
+}
+
+.SideContainer {
+	position: absolute;
+	width: 240px;
+	height: 560px;
+	right: 80px;
+	left: 124px;
+	top: 53px;
+	bottom: 80px;
+	background: rgba(255, 255, 255, 0.68);
+	backdrop-filter: blur(5px);
+	border-radius: 40px 0px 0px 40px;
+}
+
+.containermini {
+	position: absolute;
+	width: 240px;
+	height: 560px;
+	right: 80px;
+	left: 0;
+	top: 0;
+	bottom: 80px;
+	background: rgba(255, 255, 255, 0.68);
+	backdrop-filter: blur(5px);
+	border-radius: 40px 0px 0px 40px;
+}
+
+.logo {
+	position: absolute;
+	width: 155.05px;
+	height: 44px;
+	left: 42px;
+	top: 40px;
+}
+
+.user {
+	position: absolute;
+	width: 104px;
+	height: 104px;
+	left: 67px;
+	top: 106px;
+}
+
+.logout {
+	position: absolute;
+	width: 21.75px;
+	height: 27.6px;
+	left: 110px;
+	top: 520px;
+}
+
+.welcome-card-1 {
+	position: absolute;
+	width: 330px;
+	height: 480px;
+	left: 278px;
+	top: 40px;
+	background: rgba(255, 255, 255, 0.68);
+	border-radius: 40px;
+}
+
+.welcomeCard {
+	position: absolute;
+	width: 330px;
+	height: 480px;
+	left: 278px;
+	top: 40px;
+	background: rgba(255, 255, 255, 0.68);
+	border-radius: 40px;
+}
+
+.people {
+	position: absolute;
+	width: 320px;
+	height: 319px;
+	left: 15px;
+	top: -15px;
+}
+
+.shadow {
+	position: absolute;
+	width: 259.84px;
+	height: 12.12px;
+	left: 38px;
+	top: 280px;
+	background: rgba(0, 0, 0, 0.35);
+	filter: blur(19.6385px);
+	transform: rotate(0.08deg);
+}
+
+.hello-message {
+	position: absolute;
+	width: 183px;
+	height: 36px;
+	left: 74px;
+	top: 330px;
+	font-family: "Poppins", sans-serif;
+	font-style: normal;
+	font-weight: 500;
+	font-size: 24px;
+	line-height: 36px;
+	/* identical to box height */
+
+	text-align: center;
+
+	/* dark green */
+
+	color: #125465;
+}
+
+.hello-message-2 {
+	/* may every step you make be filled with happiness */
+
+	position: absolute;
+	width: 268px;
+	height: 52px;
+
+	left: 34px;
+	top: 377px;
+
+	font-family: Poppins;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 17px;
+	line-height: 25px;
+	text-align: center;
+
+	/* font black */
+
+	color: #272727;
+}
+
+.welcome-card-calendar {
+	position: absolute;
+	width: 430px;
+	height: 344.18px;
+	left: 650px;
+	top: 40px;
+	background: rgba(255, 255, 255, 0.68);
+	border-radius: 30px;
+	padding: 10px;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
+
+.react-calendar {
+	max-width: 100%;
+	line-height: 1.1em;
+	font-family: "Poppins", sans-serif;
+}
+.react-calendar--doubleView {
+	width: 800px;
+}
+.react-calendar--doubleView .react-calendar__viewContainer {
+	display: flex;
+	margin: -0.5em;
+}
+.react-calendar--doubleView .react-calendar__viewContainer > * {
+	width: 50%;
+	margin: 0.5em;
+}
+.react-calendar,
+.react-calendar *,
+.react-calendar *:before,
+.react-calendar *:after {
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	font-family: "Poppins", sans-serif;
+}
+.react-calendar button {
+	margin: 0;
+	border: 0;
+	outline: none;
+}
+.react-calendar button:enabled:hover {
+	cursor: pointer;
+}
+.react-calendar__navigation {
+	height: 44px;
+	margin-bottom: 1em;
+}
+.react-calendar__navigation button {
+	min-width: 44px;
+	background: none;
+}
+.react-calendar__navigation button:enabled:hover {
+	background-color: #4d97fb;
+	border-radius: 15px;
+}
+
+.react-calendar__month-view__weekdays {
+	text-align: center;
+	text-transform: uppercase;
+	text-decoration: underline;
+	font-size: 0.75em;
+}
+.react-calendar__month-view__weekdays__weekday {
+	padding: 0.5em;
+}
+.react-calendar__month-view__weekNumbers {
+	font-weight: bold;
+}
+.react-calendar__month-view__weekNumbers .react-calendar__tile {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 1em;
+	padding: calc(0.75em / 0.75) calc(0.5em / 0.75);
+}
+
+.react-calendar__month-view__days__day--neighboringMonth {
+	color: #125465;
+}
+.react-calendar__year-view .react-calendar__tile,
+.react-calendar__decade-view .react-calendar__tile,
+.react-calendar__century-view .react-calendar__tile {
+	padding: 1.5em;
+}
+.react-calendar__tile {
+	max-width: 100%;
+	text-align: center;
+	padding: 0.75em 0.5em;
+	background: none;
+}
+.react-calendar__tile:disabled {
+	background-color: #4d97fb;
+	border-radius: 15px;
+}
+.react-calendar__tile:enabled:hover {
+	background: #4d97fb;
+	border-radius: 76px;
+	color: white;
+}
+.react-calendar__tile--now {
+	background: #125465;
+	border-radius: 76px;
+	color: white;
+}
+.react-calendar__tile--now:enabled:hover {
+	background: #125465;
+	border-radius: 76px;
+	color: white;
+}
+
+.welcome-employee-card {
+	position: absolute;
+	width: 201px;
+	height: 107px;
+	left: 650px;
+	bottom: 44px;
+	background: rgba(255, 255, 255, 0.68);
+	border-radius: 20px;
+}
+
+.welcome-leave_req-card {
+	position: absolute;
+	width: 201px;
+	height: 107px;
+	height: 107px;
+	left: 875px;
+	bottom: 44px;
+	background: rgba(255, 255, 255, 0.68);
+	border-radius: 20px;
+}
+
+.welcome-employee-card h2 {
+	position: absolute;
+	width: 174px;
+	height: 30px;
+	left: 12px;
+	bottom: 64px;
+	font-family: "Poppins", sans-serif;
+	font-style: normal;
+	font-weight: 500;
+	font-size: 21px;
+	line-height: 31px;
+	text-align: center;
+	color: #125465;
+}
+
+.welcome-employee-card p {
+	position: absolute;
+	width: 174px;
+	height: 30px;
+	left: 13px;
+	bottom: 27px;
+	font-family: Poppins;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 23px;
+	line-height: 34px;
+	text-align: center;
+	color: #125465;
+}
+
+.welcome-leave_req-card p {
+	position: absolute;
+	width: 174px;
+	height: 30px;
+	left: 13px;
+	bottom: 27px;
+	font-family: Poppins;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 23px;
+	line-height: 34px;
+	text-align: center;
+	color: #125465;
+}
+
+.welcome-leave_req-card h2 {
+	position: absolute;
+	width: 174px;
+	height: 30px;
+	left: 12px;
+	bottom: 64px;
+	font-family: "Poppins", sans-serif;
+	font-style: normal;
+	font-weight: 500;
+	font-size: 21px;
+	line-height: 31px;
+	text-align: center;
+	color: #125465;
+}
+
+.registeration-body {
+	width: 879px;
+	height: 398px;
+	right: 80px;
+	left: 80px;
+	top: 92px;
+	bottom: 80px;
+	margin-left: 241px;
+	margin-top: 41px;
+	align-items: center;
+	justify-content: center;
+	overflow-y: scroll;
+}
+
+/* .registeration-card {
+	
+} */
+
+.employee-reg-label {
+	font-family: "Poppins", sans-serif;
+	/* font-style: normal; */
+	/* font-weight: 300; */
+	font-size: 21px;
+	margin-top: 10px;
+	color: #205f70;
+	padding-left: 5px;
+}
+
+textarea {
+	resize: none;
+	border-radius: 10px;
+	border: none;
+	font-family: "Poppins", sans-serif;
+	font-style: normal;
+	font-weight: 500;
+	font-size: 15px;
+	padding-left: 7px;
+	color: #272727;
+	width: 678px;
+	height: 80px;
+	padding-top: 3px;
+}
+
+.employee-reg-text {
+	height: 32px;
+	width: 281px;
+	border-radius: 12px;
+	border: none;
+	font-family: "Poppins", sans-serif;
+	font-style: normal;
+	font-weight: 500;
+	font-size: 15px;
+	padding-left: 7px;
+	color: #272727;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+	outline: none;
+}
+
+.employee-reg-select {
+	width: 281px;
+	height: 32px;
+	border-radius: 12px;
+	border: none;
+	font-family: "Poppins", sans-serif;
+	font-style: normal;
+	font-weight: 500;
+	font-size: 15px;
+	padding-left: 7px;
+	color: #272727;
+}
+
+.btn-reg-emp {
+	background-color: #0464fc;
+	font-family: "Poppins", sans-serif;
+	font-style: normal;
+	font-weight: 500;
+	border: none;
+	color: white;
+	padding: 12px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 15px;
+	margin: 4px 2px;
+	cursor: pointer;
+	width: 678px;
+	border-radius: 10px;
+	margin-top: 20px;
+}
+
+.btn-reg-emp:hover {
+	background-color: #015cee;
+}
+
+.employee-reg-form {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.emp-reg-title {
+	margin-left: 323px;
+	margin-top: 42px;
+	display: flex;
+}
+
+.ReturnBtn {
+	width: 43px;
+}
+
+.rn-btn {
+	background-color: transparent;
+	border: none;
+	display: inline-block;
+	cursor: pointer;
+}
+
+.emp-reg-heading {
+	font-family: "Poppins", sans-serif;
+	font-style: normal;
+	font-weight: 500;
+	color: #125465;
+	font-size: 38px;
+	margin-left: 165px;
+}
