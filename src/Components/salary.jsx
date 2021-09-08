@@ -80,6 +80,20 @@ class salary extends Component {
 		console.log(`phone: ${this.state.phone}`);
 		console.log(`address: ${this.state.address}`);
 
+		const newEmployee = {
+			password: this.state.password,
+			role: this.state.role,
+			fname: this.state.fname,
+			lname: this.state.lname,
+			email: this.state.email,
+			phone: this.state.phone,
+			address: this.state.address,
+		};
+
+		axios
+			.post("http://localhost:3004/employee/sign-up", newEmployee)
+			.then(res => console.log(res.data));
+
 		this.setState({
 			password: "",
 			role: "",
