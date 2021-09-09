@@ -7,6 +7,8 @@ import user from "../images/user.png";
 import Sidebar from "./Sidebar";
 import logout from "../images/logout.png";
 import ReturnBtn from "../images/returnicon.png";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 class salary extends Component {
 	constructor(props) {
@@ -92,7 +94,9 @@ class salary extends Component {
 
 		axios
 			.post("http://localhost:3004/employee/sign-up", newEmployee)
-			.then(res => console.log(res.data));
+			.then(res =>
+				toast.success("New employee has been registered successfully!"),
+			);
 
 		this.setState({
 			password: "",
@@ -110,6 +114,17 @@ class salary extends Component {
 	render() {
 		return (
 			<div>
+				<ToastContainer
+					position='top-right'
+					autoClose={5000}
+					hideProgressBar={false}
+					newestOnTop={false}
+					closeOnClick
+					rtl={false}
+					pauseOnFocusLoss
+					draggable
+					pauseOnHover
+				/>
 				<div className='MainContainer'>
 					<div className='containermini'>
 						<img src={logo} className='logo' />
