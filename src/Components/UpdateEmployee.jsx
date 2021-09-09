@@ -9,7 +9,7 @@ import ReturnBtn from "../images/returnicon.png";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-class AddEmployee extends Component {
+class UpdateEmployee extends Component {
 	constructor(props) {
 		super(props);
 
@@ -81,40 +81,34 @@ class AddEmployee extends Component {
 		console.log(`phone: ${this.state.phone}`);
 		console.log(`address: ${this.state.address}`);
 
-		if (this.state.password !== this.state.password2) {
-			toast.error("Password mismatch");
-		} else if (this.state.role === "") {
-			toast.error("Please select a role");
-		} else {
-			const newEmployee = {
-				password: this.state.password,
-				role: this.state.role,
-				fname: this.state.fname,
-				lname: this.state.lname,
-				email: this.state.email,
-				phone: this.state.phone,
-				address: this.state.address,
-			};
+		const newEmployee = {
+			password: this.state.password,
+			role: this.state.role,
+			fname: this.state.fname,
+			lname: this.state.lname,
+			email: this.state.email,
+			phone: this.state.phone,
+			address: this.state.address,
+		};
 
-			axios
-				.post("http://localhost:3004/employee/sign-up", newEmployee)
-				.then(res =>
-					toast.success("New employee has been registered successfully!"),
-				)
-				.catch(res => toast.error("Error registering"));
+		axios
+			.post("http://localhost:3004/employee/sign-up", newEmployee)
+			.then(res =>
+				toast.success("New employee has been registered successfully!"),
+			)
+			.catch(res => toast.error("Error registering"));
 
-			this.setState({
-				password: "",
-				role: "",
-				fname: "",
-				lname: "",
-				email: "",
-				phone: "",
-				address: "",
-				password2: "",
-				submit: false,
-			});
-		}
+		this.setState({
+			password: "",
+			role: "",
+			fname: "",
+			lname: "",
+			email: "",
+			phone: "",
+			address: "",
+			password2: "",
+			submit: false,
+		});
 	}
 
 	render() {
@@ -152,7 +146,7 @@ class AddEmployee extends Component {
 							</button>
 						</NavLink>
 
-						<h2 className='emp-reg-heading'>New Employee</h2>
+						<h2 className='emp-reg-heading'>Update Employee</h2>
 					</div>
 
 					<div className='registeration-body'>
@@ -304,7 +298,7 @@ class AddEmployee extends Component {
 								/>
 								<br />
 								<button type='submit' className='btn-reg-emp'>
-									Add Employee
+									Update Employee
 								</button>
 							</form>
 						</div>
@@ -315,4 +309,4 @@ class AddEmployee extends Component {
 	}
 }
 
-export default AddEmployee;
+export default UpdateEmployee;
