@@ -6,6 +6,7 @@ import employee from "./Components/employee";
 import leaves from "./Components/leaves";
 import salary from "./Components/salary";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import AddEmployee from "./Components/AddEmployee";
 
 function App() {
 	return (
@@ -22,6 +23,9 @@ function App() {
 				</Switch>
 				<Switch>
 					<Route path='/salary' component={salary} />
+				</Switch>
+				<Switch>
+					<Route path='/new-employee' component={AddEmployee} />
 				</Switch>
 			</div>
 		</Router>
