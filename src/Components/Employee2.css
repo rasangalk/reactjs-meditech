@@ -1,0 +1,22 @@
+.emp-list-table2 {
+	padding: 30px;
+}
+.emp-list-table2 > div {
+	display: grid;
+	grid-template-columns: 10% 25% 40% 25%;
+	padding: 10px;
+}
+.emp-list-table2 > button {
+	display: grid;
+	grid-template-columns: 10% 25% 40% 25%;
+	cursor: pointer;
+	padding: 10px;
+	background-color: unset;
+	border: unset;
+	width: 100%;
+	text-align: unset;
+	animation: namea 10s infinite;
+}
+.emp-list-table2 > button:hover {
+	background-color: white;
+}

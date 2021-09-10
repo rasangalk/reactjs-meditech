@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 import logo from "../images/logo.png";
 import user from "../images/user.png";
 import Sidebar from "./Sidebar";
@@ -9,6 +10,19 @@ import Calendar from "react-calendar";
 
 function MainContainer() {
 	//const [leaverequest, setLeaverequest] = useState("");
+
+	const [empCount, setEmpCount] = useState(0);
+
+	useEffect(() => {
+		axios
+			.get("http://localhost:3004/employee/")
+			.then(response => {
+				setEmpCount(response.data.length);
+			})
+			.catch(function (error) {
+				console.log(error);
+			});
+	}, []);
 
 	return (
 		<div className='MainContainer'>
@@ -31,7 +45,7 @@ function MainContainer() {
 			</div>
 			<div className='welcome-employee-card'>
 				<h2>employees</h2>
-				<p>_</p>
+				<p>{empCount}</p>
 			</div>
 			<div className='welcome-leave_req-card'>
 				<h2>leave requests</h2>

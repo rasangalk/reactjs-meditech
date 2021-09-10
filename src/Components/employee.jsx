@@ -7,7 +7,7 @@ import { NavLink } from "react-router-dom";
 import axios from "axios";
 
 const Employee = props => (
-	<button className='emp-list-row-click'>
+	<div className='emp-list-row-click' onClick={this}>
 		<tr>
 			<td className='emp-list-data'>{props.employee.id}</td>
 			&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
@@ -20,7 +20,7 @@ const Employee = props => (
 			&nbsp;&nbsp; &nbsp;&nbsp;
 			<td className='emp-list-data'>{props.employee.role}</td>
 		</tr>
-	</button>
+	</div>
 );
 
 class employee extends Component {
