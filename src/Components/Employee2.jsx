@@ -10,6 +10,7 @@ import EmployeeView from "./EmployeeView";
 
 function Employee2() {
 	const [employees, setEmployees] = useState([]);
+	const [filteredEmployee, setFilteredEmployee] = useState();
 	const [popupOn, setPopupOn] = useState(false);
 	const [viewEmploy, setViewEmploy] = useState();
 
@@ -40,6 +41,18 @@ function Employee2() {
 		setViewEmploy();
 	};
 
+	const handleSearch = async e => {
+		var match = await employees.filter(data => {
+			return data.fname === e.target.value;
+		});
+		console.log(match);
+		if (match.length !== 0) {
+			setFilteredEmployee(match);
+		} else {
+			setFilteredEmployee();
+		}
+	};
+
 	return (
 		<>
 			<div>
@@ -63,9 +76,10 @@ function Employee2() {
 									type='search'
 									className='emp-list-search'
 									placeholder='search'
+									onChange={handleSearch}
 								/>
 								<NavLink
-									to='/new-employee'
+									to='/employee-manager/new-employee'
 									activeClassName='active-nav'
 									className='row'>
 									<button className='emp-list-btn'>add new</button>
@@ -79,16 +93,39 @@ function Employee2() {
 									<h5>Email</h5>
 									<h5>Role</h5>
 								</div>
-								{employees.map((employee, index) => {
-									return (
-										<button key={index} value={employee.id} onClick={openPopup}>
-											<div clickable={false}>{employee.id}</div>
-											<div>{employee.fname}</div>
-											<div>{employee.email}</div>
-											<div>{employee.role}</div>
-										</button>
-									);
-								})}
+								{filteredEmployee ? (
+									<div>
+										{filteredEmployee.map((employee, index) => {
+											return (
+												<button
+													key={index}
+													value={employee.id}
+													onClick={openPopup}>
+													<div clickable={false}>{employee.id}</div>
+													<div>{employee.fname}</div>
+													<div>{employee.email}</div>
+													<div>{employee.role}</div>
+												</button>
+											);
+										})}
+									</div>
+								) : (
+									<div>
+										{employees.map((employee, index) => {
+											return (
+												<button
+													key={index}
+													value={employee.id}
+													onClick={openPopup}>
+													<div clickable={false}>{employee.id}</div>
+													<div>{employee.fname}</div>
+													<div>{employee.email}</div>
+													<div>{employee.role}</div>
+												</button>
+											);
+										})}
+									</div>
+								)}
 							</div>
 						</div>
 					</div>

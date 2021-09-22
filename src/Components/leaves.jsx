@@ -1,29 +1,91 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import Sidebar from "./Sidebar";
 import logo from "../images/logo.png";
 import user from "../images/user.png";
-import Sidebar from "./Sidebar";
 import logout from "../images/logout.png";
-import people from "../images/people.png";
-import shadow from "../images/shadow.png";
-import Calendar from "react-calendar";
+import "./Leaves.css";
+import axios from "axios";
+import { NavLink } from "react-router-dom";
+import LeaveView from "./LeaveView";
 
-function leaves() {
+function Leaves() {
+	const [leaves, setLeaves] = useState([]);
+	const [popupOn, setPopupOn] = useState(false);
+	const [viewLeaves, setViewLeaves] = useState();
+
+	useEffect(() => {
+		axios
+			.get("http://localhost:3004/leave/all")
+			.then(response => {
+				setLeaves(response.data);
+				console.log(response.data.length);
+			})
+			.catch(function (error) {
+				console.log(error);
+			});
+	}, []);
+
+	const openPopup = e => {
+		e.preventDefault();
+		var value = e.target.value;
+		if (value === undefined || value === "" || value === null) {
+			value = e.target.parentNode.value;
+		}
+		setViewLeaves(value);
+		setPopupOn(true);
+	};
+
+	const closePopup = () => {
+		setPopupOn(false);
+		setViewLeaves();
+	};
+
 	return (
-		<div>
-			<h1>Leaves page</h1>
-			<div className='MainContainer'>
-				<div className='containermini'>
-					<img src={logo} className='logo' />
+		<>
+			<div>
+				<div className='MainContainer'>
+					<div className='containermini'>
+						<img src={logo} className='logo' />
 
-					<img src={user} className='user' />
+						<img src={user} className='user' />
 
-					<Sidebar />
+						<Sidebar />
 
-					<img src={logout} className='logout' />
+						<img src={logout} className='logout' />
+					</div>
+					<div className='emp-list-body'>
+						<div className='emp-list-body2'>
+							<div className='emp-list-title'>
+								<h2 className='emp-list-heading'>Leave Request</h2>
+							</div>
+							<br />
+							<div className='leave-list-table2'>
+								<div>
+									<h5>ID</h5>
+									<h5>employee ID</h5>
+									<h5>requeted date</h5>
+									<h5>leave date</h5>
+								</div>
+								<div>
+									{leaves.map((leave, index) => {
+										return (
+											<button key={index} value={leave.id} onClick={openPopup}>
+												<div clickable={false}>{leave.id}</div>
+												<div>{leave.employeeId}</div>
+												<div>{leave.createdAt}</div>
+												<div>{leave.appliedDate}</div>
+											</button>
+										);
+									})}
+								</div>
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
-		</div>
+			{popupOn && <LeaveView closePopup={closePopup} id={viewLeaves} />}
+		</>
 	);
 }
 
-export default leaves;
+export default Leaves;

@@ -8,28 +8,28 @@ function Sidebar() {
 			<ul className='SidebarList'>
 				<NavLink
 					style={{ textDecoration: "none" }}
-					to='/home'
+					to='/employee-manager/home'
 					activeClassName='active-nav'
 					className='row'>
 					Home
 				</NavLink>
 				<NavLink
 					style={{ textDecoration: "none" }}
-					to='/employee'
+					to='/employee-manager/employee'
 					activeClassName='active-nav'
 					className='row'>
 					Employee
 				</NavLink>
 				<NavLink
 					style={{ textDecoration: "none" }}
-					to='/leaves'
+					to='/employee-manager/leaves'
 					activeClassName='active-nav'
 					className='row'>
 					Leaves
 				</NavLink>
 				<NavLink
 					style={{ textDecoration: "none" }}
-					to='/salary'
+					to='/employee-manager/salary'
 					activeClassName='active-nav'
 					className='row'>
 					Salary

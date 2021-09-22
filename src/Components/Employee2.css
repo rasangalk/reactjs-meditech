@@ -1,12 +1,21 @@
 .emp-list-table2 {
 	padding: 30px;
 }
-.emp-list-table2 > div {
+
+.emp-list-table2 > div:first-of-type {
 	display: grid;
 	grid-template-columns: 10% 25% 40% 25%;
 	padding: 10px;
+	font-family: Poppins;
+	font-size: 20px;
+	color: #125465;
 }
-.emp-list-table2 > button {
+.emp-list-table2 > div:last-of-type {
+	overflow-y: auto;
+	max-height: 200px;
+}
+
+.emp-list-table2 > div > button {
 	display: grid;
 	grid-template-columns: 10% 25% 40% 25%;
 	cursor: pointer;
@@ -15,8 +24,11 @@
 	border: unset;
 	width: 100%;
 	text-align: unset;
-	animation: namea 10s infinite;
+	font-family: Poppins;
+	font-size: 15px;
+	color: #272727;
 }
-.emp-list-table2 > button:hover {
+.emp-list-table2 > div > button:hover {
 	background-color: white;
+	border-radius: 15px;
 }

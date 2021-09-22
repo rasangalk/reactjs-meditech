@@ -1,0 +1,39 @@
+.leave-list-table2 {
+	padding: 30px;
+}
+.leave-list-table2 > div:first-of-type {
+	display: grid;
+	place-content: center;
+	grid-template-columns: 14% 29% 25% 25%;
+	padding: 10px;
+	font-family: Poppins;
+	font-size: 20px;
+	color: #125465;
+}
+.leave-list-table2 > div:last-of-type {
+	overflow-y: auto;
+	max-height: 250px;
+}
+.leave-list-table2 > div > button {
+	display: grid;
+	place-content: center;
+	grid-template-columns: 14% 29% 25% 25%;
+	cursor: pointer;
+	padding: 10px;
+	background-color: unset;
+	border: unset;
+	width: 100%;
+	text-align: unset;
+	font-family: Poppins;
+	font-size: 15px;
+	color: #272727;
+}
+.leave-list-table2 > div > button:hover {
+	background-color: white;
+	border-radius: 15px;
+}
+.leave-list-table2 > div > h5,
+.leave-list-table2 > div > button > div {
+	display: flex;
+	justify-content: center;
+}
