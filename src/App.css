@@ -765,3 +765,21 @@ select:focus {
 	justify-content: space-evenly;
 	margin-top: 50px;
 }
+
+.emp-leave-btn {
+	background-color: #0464fc;
+	font-family: "Poppins", sans-serif;
+	font-style: normal;
+	font-weight: 500;
+	border: none;
+	color: white;
+	padding: 5px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 15px;
+	margin-left: 693px;
+	cursor: pointer;
+	width: 118px;
+	border-radius: 10px;
+}

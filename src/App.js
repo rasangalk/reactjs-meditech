@@ -10,6 +10,7 @@ import AddEmployee from "./Components/AddEmployee";
 import EmployeeView from "./Components/EmployeeView";
 import UpdateEmployee from "./Components/UpdateEmployee2";
 import EmployeeLogin from "./Components/EmployeeLogin";
+import LeaveReport from "./Components/r_report";
 
 function App() {
 	return (
@@ -41,6 +42,9 @@ function App() {
 				</Switch>
 				<Switch>
 					<Route path='/employee-login' component={EmployeeLogin} />
+				</Switch>
+				<Switch>
+					<Route path='/employee-leaveReport' component={LeaveReport} />
 				</Switch>
 			</div>
 		</Router>

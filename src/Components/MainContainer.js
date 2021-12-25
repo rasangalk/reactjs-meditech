@@ -12,12 +12,24 @@ function MainContainer() {
 	//const [leaverequest, setLeaverequest] = useState("");
 
 	const [empCount, setEmpCount] = useState(0);
+	const [leaveCount, setLeavecount] = useState(0);
 
 	useEffect(() => {
 		axios
 			.get("http://localhost:3004/employee/")
 			.then(response => {
 				setEmpCount(response.data.length);
+			})
+			.catch(function (error) {
+				console.log(error);
+			});
+	}, []);
+
+	useEffect(() => {
+		axios
+			.get("http://localhost:3004/leave/all")
+			.then(response => {
+				setLeavecount(response.data.length);
 			})
 			.catch(function (error) {
 				console.log(error);
@@ -37,19 +49,19 @@ function MainContainer() {
 				<img src={shadow} className='shadow' />
 				<h2 className='hello-message'>Hello Rasanga!</h2>
 				<p className='hello-message-2'>
-					may every step you make be filled with happiness
+					May every step you make be filled with happiness
 				</p>
 			</div>
 			<div className='welcome-card-calendar'>
 				<Calendar />
 			</div>
 			<div className='welcome-employee-card'>
-				<h2>employees</h2>
+				<h2>Employees</h2>
 				<p>{empCount}</p>
 			</div>
 			<div className='welcome-leave_req-card'>
-				<h2>leave requests</h2>
-				<p>_</p>
+				<h2>Leave Requests</h2>
+				<p>{leaveCount}</p>
 			</div>
 		</div>
 	);

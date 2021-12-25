@@ -50,9 +50,7 @@ function UpdateEmployee2() {
 
 		axios
 			.patch("http://localhost:3004/employee/" + params.id, newEmployee)
-			.then(res =>
-				toast.success("New employee has been registered successfully!"),
-			)
+			.then(res => toast.success("Employee has been updated successfully!"))
 			.catch(res => toast.error("Error registering"));
 	};
 
@@ -81,7 +79,10 @@ function UpdateEmployee2() {
 				</div>
 
 				<div className='emp-reg-title'>
-					<NavLink to='/employee' activeClassName='active-nav' className='row'>
+					<NavLink
+						to='/employee-manager/home'
+						activeClassName='active-nav'
+						className='row'>
 						<button className='rn-btn'>
 							<img src={ReturnBtn} className='ReturnBtn' />
 						</button>

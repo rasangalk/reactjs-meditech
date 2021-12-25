@@ -73,38 +73,22 @@ function LeaveView(props) {
 				<img src={CloseIcon} className='closeicon' onClick={props.closePopup} />
 			</button>
 			<div className='leave-card-body'>
-				<table className='leave-view-card-table'>
-					<col width='10px' />
-					<tr>
-						<td className='leave-card-heading'>Employee ID</td>
-						<td className='leave-card-heading'>Leave ID</td>
-					</tr>
-					<tr>
-						<td>{data.employeeId}</td>
-						<td>{data.id}</td>
-					</tr>
-
-					<tr>
-						<td className='leave-card-heading'>Status</td>
-					</tr>
-					<tr>
-						<td>{data.status}</td>
-					</tr>
-
-					<tr>
-						<td className='leave-card-heading'>Leave Date</td>
-					</tr>
-					<tr>
-						<td>{data.appliedDate}</td>
-					</tr>
-
-					<tr>
-						<td className='leave-card-heading'>Reason</td>
-					</tr>
-					<tr>
-						<td width='20%'>{data.reason}</td>
-					</tr>
-				</table>
+				<h3 className='leave-card-heading'>Leave id</h3>
+				<h3 className='leave-card-desc'>{data.id}</h3>
+				<br />
+				<h3 className='leave-card-heading'>Employee id</h3>
+				<h3 className='leave-card-desc'>{data.employeeId}</h3>
+				<br />
+				<h3 className='leave-card-heading'>Leave status</h3>
+				<h3 className='leave-card-desc'>{data.status}</h3>
+				<br />
+				<h3 className='leave-card-heading'>Leave date</h3>
+				<h3 className='leave-card-desc'>{data.appliedDate}</h3>
+				<br />
+				<h3 className='leave-card-heading'>Leave Reason</h3>
+				<div className='leave-card-de'>
+					<h3 className='leave-card-desc'>{data.reason}</h3>
+				</div>
 			</div>
 			<div className='emp-card-btn'>
 				<button className='emp-card-update-btn' onClick={handleAccept}>

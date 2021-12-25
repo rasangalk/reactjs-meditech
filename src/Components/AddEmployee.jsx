@@ -144,7 +144,7 @@ class AddEmployee extends Component {
 
 					<div className='emp-reg-title'>
 						<NavLink
-							to='/employee'
+							to='/employee-manager/employee'
 							activeClassName='active-nav'
 							className='row'>
 							<button className='rn-btn'>
@@ -220,7 +220,7 @@ class AddEmployee extends Component {
 										&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
 										<td>
 											<input
-												type='text'
+												type='tel'
 												name='phone'
 												value={this.state.phone}
 												onChange={this.onChangePhone}

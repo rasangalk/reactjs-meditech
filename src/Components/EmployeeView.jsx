@@ -55,7 +55,7 @@ function EmployeeView(props) {
 					</tr>
 					<tr>
 						<td>{data.fname}</td>
-						<td>{data.laname}</td>
+						<td>{data.lname}</td>
 					</tr>
 
 					<tr>

@@ -1,5 +1,6 @@
 .leave-list-table2 {
 	padding: 30px;
+	margin-top: -17px;
 }
 .leave-list-table2 > div:first-of-type {
 	display: grid;

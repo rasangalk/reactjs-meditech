@@ -26,8 +26,9 @@
 
 .leave-card-body {
 	display: flex;
+	flex-direction: column;
 	justify-content: center;
-	margin-top: 34px;
+	margin-top: -23px;
 }
 
 .leave-view-card-table {
@@ -42,4 +43,18 @@
 	font-size: 20px;
 	line-height: 30px;
 	color: #125465;
+}
+
+.leave-card-desc,
+.leave-card-heading {
+	font-family: Poppins;
+	font-style: normal;
+	font-weight: 500;
+	font-size: 20px;
+	padding-left: 42px;
+}
+
+.leave-card-desc {
+	color: #272727;
+	font-weight: 400;
 }

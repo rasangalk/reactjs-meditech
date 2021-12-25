@@ -57,14 +57,20 @@ function Leaves() {
 						<div className='emp-list-body2'>
 							<div className='emp-list-title'>
 								<h2 className='emp-list-heading'>Leave Request</h2>
+								<NavLink
+									to='/employee-leaveReport'
+									activeClassName='active-nav'
+									className='row'>
+									<button className='emp-leave-btn'>Create Report</button>
+								</NavLink>
 							</div>
 							<br />
 							<div className='leave-list-table2'>
 								<div>
 									<h5>ID</h5>
-									<h5>employee ID</h5>
-									<h5>requeted date</h5>
-									<h5>leave date</h5>
+									<h5>Employee ID</h5>
+									<h5>Requeted date</h5>
+									<h5>Leave date</h5>
 								</div>
 								<div>
 									{leaves.map((leave, index) => {

@@ -88,7 +88,7 @@ function Employee2() {
 							<br />
 							<div className='emp-list-table2'>
 								<div>
-									<h5>Id</h5>
+									<h5>ID</h5>
 									<h5>First Name</h5>
 									<h5>Email</h5>
 									<h5>Role</h5>
